@@ -30,7 +30,7 @@ def render_menu_page():
     cur.execute(query)
     results = cur.fetchall()
     print(results)
-    return render_template('menu.html')
+    return render_template('menu.html', results=results)
 
 
 @app.route('/contact')

@@ -6,11 +6,12 @@ menu
 
 {% block main %}
     <div class="products">
+        {% for record in results %}
         <div class="product-box">
-            <h3 class="product-box-heading"> Long Black </h3>
-            <img src="/static/images/longblack.jpg">
-            <p class="product-box-info"> Info </p>
+            <h3 class="product-box-heading"> {{ record[1] }} </h3>
+            <img src="/static/images/{{ record[4] }}.jpg">
+            <p class="product-box-info"> {{ record[2] }} </p>
         </div>
+        {% endfor %}
     </div>
-
 {% endblock %}
