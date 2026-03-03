@@ -22,14 +22,15 @@ def render_homepage():
     return render_template('home.html')
 
 
-@app.route('/menu')
-def render_menu_page():
-    query = "SELECT * FROM products"
+@app.route('/menu/<cat_id>')
+def render_menu_page(cat_id):
+    query = "SELECT * FROM products WHERE cat_id=?"
     con = create_connection(DATABASE)
     cur = con.cursor()
-    cur.execute(query)
+    cur.execute(query, (cat_id, ))
     results = cur.fetchall()
     print(results)
+    con.close()
     return render_template('menu.html', results=results)
 
 
