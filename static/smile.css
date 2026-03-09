@@ -90,6 +90,15 @@ a, a:visited {
     justify-content: space-evenly;
 }
 
+.categories {
+    font-size: 30px;
+    text-align: center;
+    border: 1px solid rgba(189, 195, 199, 1.0);
+    color: rgba(44, 62, 80, 1.0);
+    list-style-type: none
+
+}
+
 .product-box {
     /*width: 13vw;*/
     width: 32%;

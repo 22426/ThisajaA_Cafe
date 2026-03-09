@@ -5,6 +5,11 @@ menu
 {% endblock %}
 
 {% block main %}
+    <div class="categories">
+    {% for record in cat_results %}
+        <li> <a href="/menu/{{ record[0] }}"> {{ record[1] }} </a></li>
+    {% endfor %}
+    </div>
     <div class="products">
         {% for record in results %}
         <div class="product-box">

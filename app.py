@@ -18,20 +18,22 @@ def create_connection(db_file):
 
 @app.route('/')
 def render_homepage():
-
     return render_template('home.html')
 
 
 @app.route('/menu/<cat_id>')
 def render_menu_page(cat_id):
-    query = "SELECT * FROM products WHERE cat_id=?"
     con = create_connection(DATABASE)
+    query = "SELECT * FROM products WHERE fk_cat_id=?"
+    query_2 = "SELECT * FROM categories"
     cur = con.cursor()
     cur.execute(query, (cat_id, ))
     results = cur.fetchall()
-    print(results)
+    cur = con.cursor()
+    cur.execute(query_2)
+    cat_results = cur.fetchall()
     con.close()
-    return render_template('menu.html', results=results)
+    return render_template('menu.html', results=results, cat_results=cat_results)
 
 
 @app.route('/contact')
