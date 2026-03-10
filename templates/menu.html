@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 
 {% block pageheading %}
-menu
-{% endblock %}
-
-{% block main %}
+    menu
     <div class="categories">
     {% for record in cat_results %}
         <li> <a href="/menu/{{ record[0] }}"> {{ record[1] }} </a></li>
     {% endfor %}
     </div>
+{% endblock %}
+
+{% block main %}
     <div class="products">
         {% for record in results %}
         <div class="product-box">

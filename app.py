@@ -36,6 +36,16 @@ def render_menu_page(cat_id):
     return render_template('menu.html', results=results, cat_results=cat_results)
 
 
+@app.route('/signup', methods=["POST", "GET"])
+def render_signup_page():
+    return render_template('signup.html')
+
+
+@app.route('/login', methods=["POST", "GET"])
+def render_login_page():
+    return render_template('login.html')
+
+
 @app.route('/contact')
 def render_contact_page():
     return render_template('contact.html')
