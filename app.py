@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import sqlite3
 from sqlite3 import Error
 
@@ -38,7 +38,10 @@ def render_menu_page(cat_id):
 
 @app.route('/signup', methods=["POST", "GET"])
 def render_signup_page():
-    return render_template('signup.html')
+    if request.method =='POST':
+        
+    else:
+        return render_template('signup.html')
 
 
 @app.route('/login', methods=["POST", "GET"])
